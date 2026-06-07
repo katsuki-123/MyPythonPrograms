@@ -99,4 +99,4 @@ with open("student.txt" , "r") as file:
   for r in file:
     data = r.strip().split(",")
     if roll_no == data[1]:
-      print(data)
+       print(f"Name: {data[0]}\nRollNo: {data[1]}\nAverage: {data[2]}\nGrade: {data[3]}")
