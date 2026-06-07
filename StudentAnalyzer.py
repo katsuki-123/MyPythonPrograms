@@ -80,3 +80,23 @@ for s in students:
     topper=s['name']
 
 print(f"Topper : {topper} , Top Average : {top_avg}")
+
+# Writing
+with open ("student.txt" , "w") as file :
+  for s in students :
+    file.write(f"{s['name']},{s['roll']},{s['average']},{s['grade']} \n")
+# Reading
+with open ("student.txt" , "r") as file:
+  for line in file:
+    print(line.strip().split())
+
+print("<--- Search by Roll No --->")
+roll_no = input("Enter Roll No. to fetch Data : ")
+
+# r is ['Dania', '1', '92', 'A+']
+# data is accessing individual elements
+with open("student.txt" , "r") as file:
+  for r in file:
+    data = r.strip().split(",")
+    if roll_no == data[1]:
+      print(data)
